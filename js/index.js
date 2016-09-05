@@ -1,4 +1,5 @@
 $(document).ready(function(){
+	alert("Hola Mundo");
 	cordova.plugins.barcodeScanner.scan(
 		function (result) {
 			alert("We got a barcode\n" +
