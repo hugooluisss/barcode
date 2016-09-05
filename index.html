@@ -8,7 +8,7 @@
  function scan(){
  cordova.plugins.barcodeScanner.scan(function(result){
  //success callback
- 	result  = JSON.stringify(result)
+ 	result = $.parseJSON(result);
  	$("#dvCodigo").html(result.text + " el formáto del código es " + result.format);
 
  },function(error){
@@ -21,7 +21,7 @@
 </head>
 <body>
  <h3>Prueba de scaner</h3>
- <button onclick="scan()" class="btn btn-info">Scarnear producto</button>
+ <button onclick="scan()" class="btn btn-info">Scanear producto</button>
  
  <div class="alert alert-success" id="dvCódigo"></div>
 </body>
