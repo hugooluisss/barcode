@@ -1,0 +1,126 @@
+@import "md/material-design-color-palette.less";
+@import "funciones.less";
+
+@anchoMenuColapsed: 100%;
+
+body{
+	.degrada(90, #b3b3b3, #fff, #fff);
+}
+
+.validateError{
+	color: @mdc-red;
+	font-size: 12px;
+	font-weight: inherit;
+}
+
+.setHand{
+	cursor: hand;
+}
+
+.overflow-x{
+	overflow:scroll;
+}
+
+.form-horizontal .form-group{
+	margin-right: 0px;
+}
+
+.barraNavegacion{
+	color: white;
+	a{
+		color: white;
+	}
+	
+	.navbar-header{
+		background: url("../img/bg-login.png") #8cc63f;
+		
+		.navbar-toggle{
+			background: @mdc-green-300;
+			font-size: 12px;
+			color: white;
+		}
+		
+		.navbar-center{
+			margin-top: 15px;
+			float: left;
+		}
+	}
+	
+	.navbar-collapse{
+		background: url("../img/bg-login.png");
+		width: @anchoMenuColapsed;
+		float: right;
+		//max-height: 800px;
+		//position: absolute;
+		z-index: -1;
+		width: 100%;
+		min-height: 100%;
+		height: auto !important;
+		position: fixed;
+		top:0; 
+		left:0;
+		margin-top: 50px;
+		
+		img{
+			margin-top: 10px;
+			width: 60%;
+		}
+		
+		.navbar-nav > li > a{
+			border-bottom: dotted 1px @mdc-green-100;
+			&:first-child{
+				border-top: dotted 1px @mdc-green-100;	
+			}
+			&:hover, &:focus{
+				background: @mdc-green-500;
+			}
+		}
+	}
+	
+	.navbar-brand{
+		img{
+			width: 60px;
+		}
+	}
+}
+
+#modulo{
+	margin-top: 80px;
+}
+
+@media (min-width: 768px){
+	.barraNavegacion{
+		background: url("../img/bg-login.png") #8cc63f;
+		background-size: cover;
+		
+		.navbar-header{
+			background: none;
+		}
+		
+		.navbar-collapse{
+			background: none;
+			width: auto;
+			margin-top: 0px;
+			position: absolute;
+			top: auto; 
+			left: auto;
+			right: 10px;
+
+			.navbar-nav > li > a{
+				&, &:hover, &:focus, &:first-child{
+					border: none;
+				}
+			}
+		}
+	}	
+}
+
+.modal .modal-body{
+	overflow-y: auto;
+}
+
+.alerta{
+	background: #ffbd6d;
+}
+
+@import "login.less";
