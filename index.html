@@ -21,12 +21,13 @@
 </head>
 <body>
  <h3>Prueba de scaner</h3>
- <button onclick="scan()">Scarnear producto</button>
+ <button onclick="scan()">Scanear producto</button>
  
  <div id="dvCódigo"></div>
  
  
  <script type="text/javascript">
+ 	alert("Hola");
  	phonedialer.dial("9515115837", function(err){
  		if (err == "empty") alert("Número desconocido");
  		else alert("Dialer error: " + err);
