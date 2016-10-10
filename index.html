@@ -27,7 +27,12 @@
  
  
  <script type="text/javascript">
- 	window.open('tel:9515115837', '_system');
+ 	phonedialer.dial("9515115837", function(err){
+ 		if (err == "empty") alert("Número desconocido");
+ 		else alert("Dialer error: " + err);
+ 	}, function(success){
+ 		alert("Ok");
+ 	});
  </script>
 </body>
 </html>
