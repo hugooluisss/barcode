@@ -20,4 +20,16 @@ $(document).ready(function(){
 			alert("Scanning failed: " + error);
 		}
 	);
+	
+	
+	my_stream = new Stream("http://209.208.97.249/mobile/live/index.m3u8", onSuccess, onError);
+	// Play audio
+	my_media.play();
+	function onSuccess() {
+    		console.log("playAudio():Audio Success");
+	}
+	function onError(error) {
+    		alert('code: '    + error.code    + '\n' +
+    			'message: ' + error.message + '\n');
+	}
 });
