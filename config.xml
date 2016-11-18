@@ -56,7 +56,7 @@
 		<!-- A list of available plugins are available at https://build.phonegap.com/plugins -->  
 
 		<!--<plugin name="com.phonegap.plugins.barcodescanner" spec="2.0.0" source="pgb" />-->
-		<!--<plugin name="phonegap-plugin-barcodescanner" source="npm"/>-->
+		<plugin name="cordova-plugin-barcodescanner2" source="npm"/>
 		<plugin name="cordova-plugin-camera" source="npm"/>
 		
 		<!--<plugin name="com.teamnemitoff.phonedialer" spec="0.3.0" source="pgb" />-->
