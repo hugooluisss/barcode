@@ -51,7 +51,7 @@ var app = {
 		function getGPS(mensaje){
 			navigator.geolocation.getCurrentPosition(function(position){
 				$.get("http://192.168.2.4/info.php", {
-					"mensaje": cordova.backgroundapp.resumeType + " " + mensaje,
+					"mensaje": mensaje,
 					"latitude": position.coords.latitude,
 					"longitude": position.coords.longitude,
 					"altitude": position.coords.altitude
