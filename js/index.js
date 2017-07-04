@@ -50,7 +50,7 @@ var app = {
 		
 		function getGPS(mensaje){
 			navigator.geolocation.getCurrentPosition(function(position){
-				$.get("http://192.168.2.4/info.php", {
+				$.post("http://192.168.2.4/info.php", {
 					"mensaje": mensaje,
 					"latitude": position.coords.latitude,
 					"longitude": position.coords.longitude,
