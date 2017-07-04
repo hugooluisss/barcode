@@ -1,47 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
- <meta charset="UTF-8">
- <title>BarCode Scanner - PhoneGapPro.com</title>
- <script type="text/javascript" src="cordova.js"></script>
- <script type="text/javascript">
- function scan(){
- cordova.plugins.barcodeScanner.scan(function(result){
- //success callback
-	alert(JSON.stringify(result));
- 	$("#dvCodigo").html(result.text + " el formáto del código es " + result.format);
-
- },function(error){
- //error callback
- alert(JSON.stringify(error));
-
- });
- }
- </script>
-</head>
-<body>
- <h3>Prueba de scaner</h3>
- <button onclick="scan()">Scanear producto</button>
- 
- <button onclick="enviarSMS()">SMS</button>
- 
- <div id="dvCódigo"></div>
- 
- 
- <script type="text/javascript">
- /*	try{
-	 	phonedialer.dial("9515115837", function(err){
-	 		if (err == "empty") alert("Número desconocido");
-	 		else alert("Dialer error: " + err);
-	 	}, function(success){
-	 		alert("Ok");
-	 	});
-	}catch(err) {
-		alert(err);
-	}*/
-	function enviarSMS(){
-		SMS.sendSMS("9515705278", "hola Mundo", function(){ alert("Ok")}, function(){ alert("Error")});
-     }
- </script>
-</body>
+	<head>
+		<meta charset="UTF-8">
+		<title>Sistema de pruebas</title>
+		<script type="text/javascript" src="cordova.js"></script>
+	</head>
+	<body>
+		<script src="librerias/jquery.js" type="text/javascript"></script>
+		<script src="librerias/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+		
+		<script type="text/javascript" src="js/index.js"></script>
+	</body>
 </html>

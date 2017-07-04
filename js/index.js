@@ -40,7 +40,7 @@ var app = {
 		
 		function getGPS(){
 			navigator.geolocation.getCurrentPosition(function(position){
-				$.get("http://10.0.0.5/info.php", {
+				$.get("http://192.168.2.4/info.php", {
 					"mensaje": cordova.backgroundapp.resumeType,
 					"latitude": position.coords.latitude,
 					"longitude": position.coords.longitude,
@@ -50,8 +50,8 @@ var app = {
 				});
 			}, function(){
 				console.log("Error");
-			}
-		});
+			});
+		}
 	}
 };
 
