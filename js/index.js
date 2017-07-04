@@ -39,14 +39,14 @@ var app = {
 		}, false); 
 		
 		document.addEventListener('resume', function(){
-			getGPS("Me reactivé");
+			getGPS("Me reactivÃ©");
 		}, false);
 		//document.addEventListener('online', this.onLineApp, false);
 		//document.addEventListener('offline', this.offLineApp, false);
 		//document.addEventListener('backbutton', this.onBackButton, false);
 	
 	
-		getGPS();
+		getGPS("Pruebas");
 		
 		function getGPS(mensaje){
 			navigator.geolocation.getCurrentPosition(function(position){
@@ -65,6 +65,9 @@ var app = {
 	}
 };
 
+
+app.initialize();
+
 $(document).ready(function(){
-	app.initialize();
+	
 });
