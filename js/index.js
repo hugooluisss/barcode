@@ -49,12 +49,14 @@ var app = {
 		getGPS("Pruebas");
 		
 		function getGPS(mensaje){
+			var f = new Date;
 			navigator.geolocation.getCurrentPosition(function(position){
 				$.post("http://192.168.2.4/info.php", {
 					"mensaje": mensaje,
 					"latitude": position.coords.latitude,
 					"longitude": position.coords.longitude,
-					"altitude": position.coords.altitude
+					"altitude": position.coords.altitude,
+					"fecha": f.getYear() + "-" + f.getMonth() + "-" + f.getDay() + " " + f.getHours() + ":" + f.getMinutes() + ":" + f.getSeconds()
 				}, function(){
 			
 				});
