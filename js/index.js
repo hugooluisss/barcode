@@ -34,14 +34,24 @@ var app = {
 	// The scope of 'this' is the event. In order to call the 'receivedEvent'
 	// function, we must explicitly call 'app.receivedEvent(...);'
 	onDeviceReady: function(){
-		console.log('deviceready. resumeType=' + cordova.backgroundapp.resumeType);
-		window.plugin.backgroundMode.enable();
+		document.addEventListener('pause', function(){
+			getGPS("Entre en modo background");
+		}, false); 
+		
+		document.addEventListener('resume', function(){
+			getGPS("Me reactivé");
+		}, false);
+		//document.addEventListener('online', this.onLineApp, false);
+		//document.addEventListener('offline', this.offLineApp, false);
+		//document.addEventListener('backbutton', this.onBackButton, false);
+	
+	
 		getGPS();
 		
-		function getGPS(){
+		function getGPS(mensaje){
 			navigator.geolocation.getCurrentPosition(function(position){
 				$.get("http://192.168.2.4/info.php", {
-					"mensaje": cordova.backgroundapp.resumeType,
+					"mensaje": cordova.backgroundapp.resumeType + " " + mensaje,
 					"latitude": position.coords.latitude,
 					"longitude": position.coords.longitude,
 					"altitude": position.coords.altitude
